@@ -136,7 +136,7 @@ class DockRepository {
         runningItems = []
         for app in NSWorkspace.shared.runningApplications {
             if let item = dockItems.first(where: { $0.bundleIdentifier == app.bundleIdentifier }) {
-                item.name        = app.localizedName ?? item.name
+                item.name        = item.name ?? app.localizedName
                 item.icon        = app.icon ?? item.icon
                 item.pid_t       = app.processIdentifier
                 item.isLaunching = !app.isFinishedLaunching
