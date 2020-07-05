@@ -16,4 +16,4 @@ jobs:
     - name: pods
       run: pod install
     - name: build
-      run: xcodeproject
+      run: xcodebuild -project Pock.xcodeproj -alltargets -configuration Debug
